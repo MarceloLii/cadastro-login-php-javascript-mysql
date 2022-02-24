@@ -1,2 +1,12 @@
-# cadastro-login-php-javascript-mysql
- Login e cadastro em php com javascript e mysql 
+# PHP sistema de cadastro e login
+Sistema de Login e cadastro 
+arquivo do banco de dados dentro da pasta.
+criar banco de dados com o nome 'paineladmin'
+importa arquivo SQL que estar dentro da pasta.
+funcao de administrador de usuarios.
+cadastro como visitante.
+funcao para excluir usuario (APENAS PARA ADMINISTRADOR).
+funcao para excluir propria conta.
+sistema de tempo inativo deslogar da conta automaticamente.
+projeto usando conhecimentos adiquiridos no curso em video.
+pode ser editado mantendo os creditos :)

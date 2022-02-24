@@ -1,0 +1,20 @@
+@font-face {
+  src: url(font/EncodeSans-Regular.ttf);
+  font-family: 'EncodeSans-Regular';    
+  font-weight: normal;
+}
+@font-face {
+  src: url(font/EncodeSans-Bold.ttf);
+  font-family: 'EncodeSans-Bold';    
+  font-weight: bold;
+}
+@font-face {
+  src: url(font/Sora-Regular.ttf);
+  font-family: 'Sora-Regular';    
+  font-weight: normal;
+}
+@font-face {
+  src: url(font/Sora-Bold.ttf);
+  font-family: 'Sora-Bold';    
+  font-weight: bold;
+}
