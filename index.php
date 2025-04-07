@@ -1,39 +1,31 @@
 <?php
-    $title="Acessar painel";
-    include ("header.php");
-?>
-<body>
+session_start();
 
-    <div class="login">
-        <div class="box">
-        <form action="./php/validar.php" method="post">
+// Definir o fuso horário para Brasília
+date_default_timezone_set('America/Sao_Paulo');
 
-            <div class="row">
+// Inclusão manual dos arquivos necessários
+require_once __DIR__ . '/app/Engine/Database.php';
+require_once __DIR__ . '/app/Router.php';
+require_once __DIR__ . '/app/Controllers/Controller.php';
+require_once __DIR__ . '/app/Controllers/UserController.php';
+require_once __DIR__ . '/app/Models/UsersModel.php';
 
-                <div class="cols-1">
-                    <h1>Entrar </h1>
-                    <h6>Por favor complete o formulário para entrar em sua conta. </h6>
-                </div>
-                <div class="cols-1">
-                    <label for="email" class="form-label">Endereço de Email</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="E-mail">
-                </div>
+use Core\Router;
+// Inicializa o roteador
+$router = new Router();
 
-                <div class="cols-1">
-                    <label for="password" class="form-label">Senha</label>
-                    <input type="password" name="senha" class="form-control" id="senha" placeholder="senha">
-                </div>
+// Definição de rotas para a aplicação
+$router->get('/', 'UserController@listarUsuarios');
+$router->get('/usuarios', 'UserController@listarUsuarios');
+$router->get('/cadastro', 'UserController@cadastrar');
+$router->get('/login', 'UserController@login');
+$router->post('/login', 'UserController@login');
+$router->get('/logout', 'UserController@logout');
+$router->post('/cadastro', 'UserController@cadastrar');
+$router->get('/update/(\d+)', 'UserController@atualizar');
+$router->post('/update/(\d+)', 'UserController@atualizar');
+$router->post('/cadastro', 'UserController@cadastrar');
 
-            </div>
-            <div class='center'>
-                    <input type="submit" value="Acessar" class="btn">
-            </div>
-
-        </form>
-
-        </div>
-
-    </div>
-
-</body>
-</html>
+// Executa o roteador
+$router->run();
